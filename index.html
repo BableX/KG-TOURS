@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="background"></div>
+
+   <div class="Глава">
+    <div class="Управление">
+        <div class="Book">
+            <p>Book</p>
+        </div>
+        <img class="logo" src="/Logo (1).png" alt="Logo">
+        <a href="" class="home-button">Home</a>
+        <p>About</p>
+        <p>Discover</p>
+        <p>Tours</p>
+    </div>
+</div>
+
+
+    <div class="KG">
+        <h1>KYRGYZSTAN</h1>
+        <p style="font-size: 35px; position: absolute; margin-left: 570px; top: 200px;">Visit the heart of Central Asia</p>
+    </div>
+    <div class="content">
+    <img src="/Group 1.png" alt="Image 1">
+    <img style="width: 195px;" src="/Group 2 (1).png" alt="Image 2">
+    <img src="/Group 3.png" alt="Image 3">
+    <img src="/Group 4.png" alt="Image 4">
+    
+</div>
+<div class="shadow"></div>
+<div class="mj">
+      <img class="mjj" src="/Мужик.png" alt="">
+    </div>
+    <div class="page-fade"></div>
+<div class="back2">
+
+</div>
+<div class="discover-section">
+    <h2 class="discover-title">
+        Discover <span>Kyrgyzstan</span>
+    </h2>
+
+    <div class="carousel">
+        <div class="foto-card">
+            <img src="/гора 1.png" alt="Mountains" class="foto active">
+            <img src="/Yssyk-Kul 2.png" alt="Lake" class="foto">
+            <img src="/Frame 3.png" alt="Burana Tower" class="foto">
+            <img src="/Frame 4.png" alt="Horses" class="foto">
+            <img src="/Frame 7.png" alt="Night view" class="foto">
+        </div>
+    </div>
+
+    <div class="carousel-buttons">
+        <button class="carousel-btn prev">&#8592;</button>
+        <button class="carousel-btn next">&#8594;</button>
+    </div>
+</div>
+
+<script>
+    const fotos = document.querySelectorAll('.foto');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+
+    let current = 0;
+
+    function showImage(index) {
+        fotos.forEach((img, i) => {
+            img.classList.remove('active');
+            if (i === index) {
+                img.classList.add('active');
+            }
+        });
+    }
+
+    nextBtn.addEventListener('click', () => {
+        current++;
+        if (current >= fotos.length) current = 0;
+        showImage(current);
+    });
+
+    prevBtn.addEventListener('click', () => {
+        current--;
+        if (current < 0) current = fotos.length - 1;
+        showImage(current);
+    });
+</script>
+
+</body>
+</html>
